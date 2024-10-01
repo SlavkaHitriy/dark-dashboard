@@ -114,7 +114,7 @@ export const transactionsRows = [
   },
   {
     id: 3,
-    orderId: 'AB-00032734',
+    orderId: 'K-00032734',
     lineNumber: '512-5719',
     partID: 'X60 BJGJ29839281',
     currentLoad: 88,
@@ -126,7 +126,7 @@ export const transactionsRows = [
   },
   {
     id: 4,
-    orderId: 'AB-00032734',
+    orderId: 'Q-00032734',
     lineNumber: '512-5719',
     partID: 'X60 BJGJ29839281',
     currentLoad: 88,
@@ -138,7 +138,7 @@ export const transactionsRows = [
   },
   {
     id: 5,
-    orderId: 'AB-00032734',
+    orderId: 'TR-00032734',
     lineNumber: '512-5719',
     partID: 'X60 BJGJ29839281',
     currentLoad: 88,
@@ -150,7 +150,7 @@ export const transactionsRows = [
   },
   {
     id: 6,
-    orderId: 'AB-00032734',
+    orderId: 'T-00032734',
     lineNumber: '512-5719',
     partID: 'X60 BJGJ29839281',
     currentLoad: 88,
@@ -162,7 +162,7 @@ export const transactionsRows = [
   },
   {
     id: 7,
-    orderId: 'AB-00032734',
+    orderId: 'CA-00032734',
     lineNumber: '512-5719',
     partID: 'X60 BJGJ29839281',
     currentLoad: 88,
@@ -186,7 +186,7 @@ export const transactionsRows = [
   },
   {
     id: 9,
-    orderId: 'AB-00032734',
+    orderId: 'AT-00032734',
     lineNumber: '512-5719',
     partID: 'X60 BJGJ29839281',
     currentLoad: 88,

@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { DataGrid } from '@mui/x-data-grid'
+import { DataGrid, GridToolbar } from '@mui/x-data-grid'
 
 export const DefaultDataGrid = ({
   columns,
@@ -19,6 +19,11 @@ export const DefaultDataGrid = ({
     [handlePageChange]
   )
 
+  // const columnsFiltered = React.useMemo(
+  //   () => columns.filter((column) => columns.includes(column.field)),
+  //   [columns],
+  // );
+
   return (
     <DataGrid
       onPaginationModelChange={handlePageSizeChange}
@@ -28,8 +33,21 @@ export const DefaultDataGrid = ({
       onRowClick={onRowClick}
       checkboxSelection
       disableRowSelectionOnClick
+      disableColumnFilter
+      disableColumnSelector
+      disableDensitySelector
+      disable
+      slotProps={{
+        toolbar: {
+          showQuickFilter: true,
+          csvOptions: { disableToolbarButton: true },
+          printOptions: { disableToolbarButton: true },
+          quickFilterProps: { debounceMs: 200 },
+        },
+      }}
       slots={{
         columnMenuIcon: () => null,
+        toolbar: GridToolbar,
       }}
       sx={{
         minHeight: '100px',
@@ -106,6 +124,7 @@ export const DefaultDataGrid = ({
           overflow: 'visible',
           overflowX: 'hidden',
           borderRadius: '0 !important',
+          minHeight: '100px',
         },
         '.MuiDataGrid-main': {
           overflowX: 'auto',

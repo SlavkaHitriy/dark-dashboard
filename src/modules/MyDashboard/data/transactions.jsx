@@ -102,7 +102,7 @@ export const transactionsRows = [
   },
   {
     id: 2,
-    orderId: 'AB-00032734',
+    orderId: 'AC-00032734',
     lineNumber: '512-5719',
     partID: 'X60 BJGJ29839281',
     currentLoad: 88,
@@ -114,7 +114,7 @@ export const transactionsRows = [
   },
   {
     id: 3,
-    orderId: 'AB-00032734',
+    orderId: 'R-00032734',
     lineNumber: '512-5719',
     partID: 'X60 BJGJ29839281',
     currentLoad: 88,

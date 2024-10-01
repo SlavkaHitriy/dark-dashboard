@@ -16,14 +16,35 @@ export const App = () => {
         <Route
           path='/dashboard'
           element={
-            <MainLayout>
+            <MainLayout withSidebar>
               <MyDashboard />
             </MainLayout>
           }
         />
-        <Route path='/order-management' element={<OrderManagement />} />
-        <Route path='/order-management/edit' element={<OrderManagementEdit />} />
-        <Route path='/login' element={<Login />} />
+        <Route
+          path='/order-management'
+          element={
+            <MainLayout>
+              <OrderManagement />
+            </MainLayout>
+          }
+        />
+        <Route
+          path='/order-management/edit'
+          element={
+            <MainLayout>
+              <OrderManagementEdit />
+            </MainLayout>
+          }
+        />
+        <Route
+          path='/login'
+          element={
+            <MainLayout>
+              <Login />
+            </MainLayout>
+          }
+        />
 
         <Route path='*' element={<Navigate to='/dashboard' replace />} />
       </Routes>
