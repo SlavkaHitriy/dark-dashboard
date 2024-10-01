@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "baseUrl": "./signaltracks-2",
+    "jsx": "react",
+    "paths": {
+      "@/*": ["./src/*"],
+      "/*": ["./public/*"]
+    }
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": ["node_modules", "dist"]
+}

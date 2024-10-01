@@ -1,0 +1,34 @@
+@import 'vars';
+
+@mixin centerElement {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin centerFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin bg($size: contain) {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: $size;
+}
+
+@mixin customScroll {
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--greyLight);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "max_line_length": 130,
+  "printWidth": 130,
+  "bracketSpacing": true,
+  "semi": false,
+  "arrowParens": "avoid"
+}
