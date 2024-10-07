@@ -72,12 +72,20 @@ button {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 767px) {
+    height: auto;
+  }
 }
 
 .app-inner {
   display: flex;
   flex: 1;
   overflow: hidden;
+
+  @media (max-width: 767px) {
+    overflow: visible;
+  }
 }
 
 svg {
@@ -91,6 +99,11 @@ svg {
   display: flex;
   height: 100%;
   overflow: auto;
+
+  @media (max-width: 767px) {
+    overflow: visible;
+    width: 100%;
+  }
 
   &::-webkit-scrollbar {
     width: 4px;
