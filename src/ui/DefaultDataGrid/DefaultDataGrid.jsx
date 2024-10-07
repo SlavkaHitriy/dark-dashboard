@@ -68,7 +68,7 @@ export const DefaultDataGrid = ({
           '&:last-of-type': {
             overflow: 'hidden',
           },
-          '&:last-of-type .MuiDataGrid-columnSeparator': {
+          '&--last .MuiDataGrid-columnSeparator': {
             display: 'none',
           },
           '&:first-of-type': {
@@ -121,13 +121,8 @@ export const DefaultDataGrid = ({
           flexShrink: 0,
         },
         '.MuiDataGrid-virtualScroller': {
-          overflow: 'visible',
-          overflowX: 'hidden',
           borderRadius: '0 !important',
           minHeight: '100px',
-        },
-        '.MuiDataGrid-main': {
-          overflowX: 'auto',
         },
         '.MuiDataGrid-columnHeaderTitleContainerContent': {
           flexGrow: 1,
