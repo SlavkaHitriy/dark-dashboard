@@ -1,10 +1,22 @@
 import { Box, Stack, Typography } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useRecoilState } from 'recoil'
 import { ProfileIcon } from '@/assets/icons/ProfileIcon.jsx'
 import logo from '@/assets/images/logo.png'
+import { sidebarVisible } from '@/core/store/index.js'
+import { DefaultIconButton } from '@/ui/DefaultIconButton/index.js'
+import { BurgerIcon } from '@/assets/icons/BurgerIcon.jsx'
+import { theme } from '@/core/theme/theme.js'
+import { CloseIcon } from '@/assets/icons/CloseIcon.jsx'
 
 export const Header = () => {
+  const [isVisible, setIsVisible] = useRecoilState(sidebarVisible)
+
+  const handleBurgerClick = () => {
+    setIsVisible(!isVisible)
+  }
+
   return (
     <Box
       bgcolor='common.black'
@@ -31,6 +43,17 @@ export const Header = () => {
           <ProfileIcon />
         </Box>
         <Typography>BER2018-2</Typography>
+        <DefaultIconButton
+          sx={{
+            [theme.breakpoints.up(768)]: {
+              display: 'none',
+            },
+          }}
+          size={32}
+          className='burger'
+          icon={isVisible ? <CloseIcon /> : <BurgerIcon />}
+          onClick={handleBurgerClick}
+        />
       </Stack>
     </Box>
   )

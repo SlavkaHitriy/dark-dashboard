@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Stack, Typography } from '@mui/material'
+import { Box, Button, Grid2, Stack, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { FormikProvider, useFormik } from 'formik'
@@ -20,6 +20,7 @@ import { TackIcon } from '@/assets/icons/TackIcon.jsx'
 import { DefaultSelect } from '@/ui/DefaultSelect/index.js'
 import { tabs } from './data/tabs.js'
 import { Tabs } from '@/ui/Tabs/index.js'
+import { theme } from '@/core/theme/theme.js'
 
 export const OrderManagement = () => {
   const [activeTab, setActiveTab] = useState(tabs[0].value)
@@ -41,7 +42,7 @@ export const OrderManagement = () => {
   return (
     <FormikProvider value={formik}>
       <Stack width='100%' px={3} py={2}>
-        <Stack direction='row' alignItems='center' justifyContent='space-between' gap={4} mb={2}>
+        <Stack direction='row' alignItems='center' justifyContent='space-between' gap={4} mb={2} flexWrap='wrap'>
           <Link to='/dashboard'>
             <Stack
               direction='row'
@@ -74,7 +75,7 @@ export const OrderManagement = () => {
               </Typography>
             </Stack>
           </Link>
-          <Stack direction='row' gap={5} alignItems='center'>
+          <Stack direction='row' gap={{ sm: 5, xs: 2 }} alignItems='center' flexWrap='wrap'>
             <Stack direction='row' gap={3} alignItems='center'>
               <Stack direction='row' gap={1} alignItems='center'>
                 <DefaultIconButton icon={<AccidentsIcon />} />
@@ -89,7 +90,7 @@ export const OrderManagement = () => {
             </Stack>
           </Stack>
         </Stack>
-        <Stack direction='row' alignItems='center' justifyContent='space-between' mb={3}>
+        <Stack direction='row' alignItems='center' justifyContent='space-between' gap={2} mb={3} flexWrap='wrap'>
           <Stack direction='row' gap={1} alignItems='center'>
             <Typography variant='h3'>Order ID 201923985981</Typography>
             <Stack direction='row' gap={1} alignItems='center' py={0.5} px={1} borderRadius='32px' bgcolor='background.secondary'>
@@ -114,7 +115,20 @@ export const OrderManagement = () => {
             <Button variant='outlined'>Generate Report</Button>
           </Stack>
         </Stack>
-        <Stack direction='row' alignItems='center' justifyContent='space-between' gap='120px' mb={8}>
+        <Stack
+          direction='row'
+          alignItems='center'
+          justifyContent='space-between'
+          gap='120px'
+          mb={8}
+          sx={{
+            [theme.breakpoints.down(1200)]: {
+              flexDirection: 'column',
+              gap: 6,
+              alignItems: 'flex-start',
+            },
+          }}
+        >
           <Box
             sx={{
               maxWidth: '470px',
@@ -141,7 +155,7 @@ export const OrderManagement = () => {
                 </Typography>
               </Stack>
             </Stack>
-            <Stack direction='row' px={2} py={3} alignItems='center' gap={3}>
+            <Stack direction='row' px={2} py={3} alignItems='center' gap={3} flexWrap='wrap'>
               <Stack direction='row' alignItems='center' gap={1}>
                 <Typography variant='h3'>231</Typography>
                 <Typography
@@ -178,26 +192,26 @@ export const OrderManagement = () => {
             </Stack>
           </Box>
           <Box maxWidth={900} width='100%'>
-            <Grid container spacing={3}>
-              <Grid item xs={3}>
+            <Grid2 container spacing={3}>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>Creation Date</Typography>
                   <Typography color='text.tertiary'>23/12/2019</Typography>
                 </Stack>
-              </Grid>
-              <Grid item xs={3}>
+              </Grid2>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>Account Status</Typography>
                   <Typography color='text.tertiary'>Normal</Typography>
                 </Stack>
-              </Grid>
-              <Grid item xs={3}>
+              </Grid2>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>End Date</Typography>
                   <Typography color='text.tertiary'>23/12/2021</Typography>
                 </Stack>
-              </Grid>
-              <Grid item xs={3}>
+              </Grid2>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>Follow up after</Typography>
                   <Typography color='text.tertiary'>
@@ -211,55 +225,57 @@ export const OrderManagement = () => {
                     />
                   </Typography>
                 </Stack>
-              </Grid>
-              <Grid item xs={3}>
+              </Grid2>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>Contract Name</Typography>
                   <Typography color='text.tertiary'>
                     <DefaultLink to='/dashboard'>SUPERTEL-WE-201902737</DefaultLink>
                   </Typography>
                 </Stack>
-              </Grid>
-              <Grid item xs={3}>
+              </Grid2>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>Identification</Typography>
                   <Typography color='text.tertiary'>ITH0283057101</Typography>
                 </Stack>
-              </Grid>
-              <Grid item xs={3}>
+              </Grid2>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>Group</Typography>
                   <Typography color='text.tertiary'>SMS2019-58178</Typography>
                 </Stack>
-              </Grid>
-              <Grid item xs={3}>
+              </Grid2>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>Connections</Typography>
                   <Typography color='text.tertiary'>Established</Typography>
                 </Stack>
-              </Grid>
-              <Grid item xs={3}>
+              </Grid2>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>Billing Address</Typography>
                   <Typography color='text.tertiary'>SE, Stockholm</Typography>
                 </Stack>
-              </Grid>
-              <Grid item xs={3}>
+              </Grid2>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>Allowance Sharing</Typography>
                   <Typography color='text.tertiary'>Normal</Typography>
                 </Stack>
-              </Grid>
-              <Grid item xs={3}>
+              </Grid2>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>Fault Priority</Typography>
                   <Typography color='text.tertiary'>0 (no priority)</Typography>
                 </Stack>
-              </Grid>
-            </Grid>
+              </Grid2>
+            </Grid2>
           </Box>
         </Stack>
-        <Tabs data={tabs} activeTab={activeTab} setActiveTab={handleChangeTab} />
+        <Box mr={-3}>
+          <Tabs data={tabs} activeTab={activeTab} setActiveTab={handleChangeTab} />
+        </Box>
         <Stack p={2} gap={2} borderRadius='4px' flexGrow={1}>
           <Stack direction='row' gap={3} justifyContent='space-between' alignItems='center'>
             <Stack direction='row' gap={1} alignItems='center'>
@@ -280,7 +296,7 @@ export const OrderManagement = () => {
               <DefaultIconButton icon={<DotsIcon />} />
             </Stack>
           </Stack>
-          <Stack direction='row' gap={3}>
+          <Stack direction='row' gap={3} flexWrap='wrap'>
             <DefaultLink to='/'>SMS X</DefaultLink>
             <DefaultLink to='/'>2017 X</DefaultLink>
             <DefaultLink to='/'>DAY X</DefaultLink>

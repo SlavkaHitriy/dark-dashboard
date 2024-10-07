@@ -8,6 +8,8 @@ export const Tabs = ({ data, activeTab, setActiveTab }) => {
       sx={{
         borderBottom: '1px solid',
         borderColor: 'background.tertiary',
+        overflowY: 'hidden',
+        overflowX: 'auto',
       }}
     >
       {data?.map((item, idx) => {

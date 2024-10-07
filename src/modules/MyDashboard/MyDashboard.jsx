@@ -10,6 +10,7 @@ import { CircleChart } from '@/components/charts/CircleChart/CircleChart.jsx'
 import { DefaultDataGrid } from '@/ui/DefaultDataGrid/index.js'
 import { FunnelIcon } from '@/assets/icons/FunnelIcon.jsx'
 import { transactionsColumns, transactionsRows } from '@/modules/MyDashboard/data/transactions.jsx'
+import { theme } from '@/core/theme/theme.js'
 
 export const MyDashboard = () => {
   return (
@@ -21,13 +22,13 @@ export const MyDashboard = () => {
           <DefaultIconButton icon={<FilterIcon />} />
         </Stack>
       </Stack>
-      <Stack direction='row' mb={2} gap={2}>
+      <Stack direction='row' mb={2} gap={2} flexWrap='wrap'>
         <Stack p={2} gap={3} borderRadius='4px' bgcolor='background.secondary' flexGrow={1} maxWidth={400}>
           <Stack direction='row' justifyContent='space-between' alignItems='center' gap={2}>
             <Typography>Main KPIs</Typography>
             <DefaultIconButton icon={<DotsIcon />} />
           </Stack>
-          <Stack direction='row' gap={3}>
+          <Stack direction='row' gap={3} flexWrap='wrap'>
             <Stack direction='row' gap={1} alignItems='center'>
               <Typography variant='h2'>2351</Typography>
               <Typography display='flex' flexDirection='column' color='text.tertiary'>
@@ -53,8 +54,8 @@ export const MyDashboard = () => {
             <Typography>Transaction Details</Typography>
             <DefaultIconButton icon={<DotsIcon />} />
           </Stack>
-          <Stack direction='row' gap={2} justifyContent='space-between' alignItems='center'>
-            <Stack direction='row' gap={3}>
+          <Stack direction='row' gap={2} justifyContent='space-between' alignItems='center' flexWrap='wrap'>
+            <Stack direction='row' gap={3} flexWrap='wrap'>
               <Stack direction='row' gap={1} alignItems='center'>
                 <Typography variant='h2'>157</Typography>
                 <Typography display='flex' flexDirection='column' color='text.tertiary'>
@@ -86,8 +87,22 @@ export const MyDashboard = () => {
           </Stack>
         </Stack>
       </Stack>
-      <Stack direction='row' gap={2} mb={2}>
-        <Stack p={2} gap={1.5} borderRadius='4px' bgcolor='background.secondary' flexGrow={1}>
+      <Stack direction='row' gap={2} mb={2} flexWrap='wrap'>
+        <Stack
+          p={2}
+          gap={1.5}
+          borderRadius='4px'
+          bgcolor='background.secondary'
+          flexGrow={1}
+          minWidth={560}
+          overflow='hidden'
+          sx={{
+            [theme.breakpoints.down(900)]: {
+              minWidth: 'unset',
+              width: '100%',
+            },
+          }}
+        >
           <Stack direction='row' justifyContent='space-between' alignItems='center' gap={2}>
             <Typography>Overdue MPA</Typography>
             <DefaultIconButton icon={<DotsIcon />} />
@@ -97,7 +112,15 @@ export const MyDashboard = () => {
             Overdue in hours
           </Typography>
         </Stack>
-        <Stack p={2} gap={1.5} borderRadius='4px' bgcolor='background.secondary' flexGrow={1}>
+        <Stack
+          p={2}
+          gap={1.5}
+          borderRadius='4px'
+          bgcolor='background.secondary'
+          flexGrow={1}
+          minWidth='calc(100% - 620px)'
+          overflow='hidden'
+        >
           <Stack direction='row' justifyContent='space-between' alignItems='center' gap={2}>
             <Typography>Risk of SLA</Typography>
             <DefaultIconButton icon={<DotsIcon />} />
@@ -129,7 +152,7 @@ export const MyDashboard = () => {
             <DefaultIconButton icon={<DotsIcon />} />
           </Stack>
         </Stack>
-        <Stack direction='row' gap={3}>
+        <Stack direction='row' gap={3} flexWrap='wrap'>
           <DefaultLink to='/'>SMS X</DefaultLink>
           <DefaultLink to='/'>2017 X</DefaultLink>
           <DefaultLink to='/'>DAY X</DefaultLink>

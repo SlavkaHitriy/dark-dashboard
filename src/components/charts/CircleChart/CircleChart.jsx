@@ -118,7 +118,7 @@ export const CircleChart = ({ simple }) => {
   return (
     <Stack>
       {!simple && (
-        <Stack direction='row' gap={1} mb={-2} position='relative' zIndex={10}>
+        <Stack direction='row' gap={1} mb={-2} position='relative' zIndex={10} flexWrap='wrap'>
           {filters.map(filter => (
             <Stack
               py={0.5}

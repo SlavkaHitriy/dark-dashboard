@@ -133,7 +133,7 @@ export const TimeChart = () => {
 
   return (
     <Stack>
-      <Stack direction='row' gap={1} mb={-2} position='relative' zIndex={10}>
+      <Stack direction='row' gap={1} mb={-2} position='relative' zIndex={10} flexWrap='wrap'>
         {timeFilters.map(filter => (
           <Stack
             py={0.5}
@@ -168,57 +168,57 @@ export const TimeChart = () => {
           </Stack>
         ))}
       </Stack>
-      <Box width={530} mt={-2} mb={-4}>
-        <BarChart
-          width={625}
-          height={400}
-          slotProps={{
-            legend: {
-              hidden: true,
-            },
-          }}
-          series={[
-            { data: pData, label: 'Sessions Trans.', id: 'transId', stack: 'total', color: theme.palette.accents.darkPeach },
-            {
-              data: uData,
-              label: 'Sessions Ovr.',
-              id: 'ovrId',
-              stack: 'total',
-              color: theme.palette.background.tertiary,
-            },
-          ]}
-          leftAxis={null}
-          grid={{
-            vertical: true,
-          }}
-          xAxis={[
-            {
-              data: xLabels,
-              scaleType: 'band',
-              tickInterval: (value, index) => (activeFilter ? index : index === 0 || value % 5 === 0),
-              tickLabelPlacement: 'tick',
-            },
-          ]}
-          sx={{
-            ml: -11,
-            '& .MuiChartsAxis-line': {
-              stroke: `${theme.palette.accents.darkPeach} !important`,
-              transform: 'translateY(2px)',
-            },
-            [`& .${chartsGridClasses.line}`]: {
-              strokeDasharray: '5 3',
-              strokeWidth: 1,
-              stroke: theme.palette.text.tertiary,
-              '&:first-of-type': {
-                strokeDasharray: 'none',
-                stroke: theme.palette.common.white,
+      <Box maxWidth={560} width='100%' mt={-2} mb={-4}>
+        <Box display='flex' justifyContent='center' alignItems='center' width='calc(100% + 90px)' height={400}>
+          <BarChart
+            slotProps={{
+              legend: {
+                hidden: true,
               },
-            },
-          }}
-          slots={{
-            popper: CustomTooltip,
-          }}
-        />
+            }}
+            series={[
+              { data: pData, label: 'Sessions Trans.', id: 'transId', stack: 'total', color: theme.palette.accents.darkPeach },
+              {
+                data: uData,
+                label: 'Sessions Ovr.',
+                id: 'ovrId',
+                stack: 'total',
+                color: theme.palette.background.tertiary,
+              },
+            ]}
+            leftAxis={null}
+            grid={{
+              vertical: true,
+            }}
+            xAxis={[
+              {
+                data: xLabels,
+                scaleType: 'band',
+                tickInterval: (value, index) => (activeFilter ? index : index === 0 || value % 5 === 0),
+                tickLabelPlacement: 'tick',
+              },
+            ]}
+            sx={{
+              ml: -11,
+              '& .MuiChartsAxis-line': {
+                stroke: `${theme.palette.accents.darkPeach} !important`,
+                transform: 'translateY(2px)',
+              },
+              [`& .${chartsGridClasses.line}`]: {
+                strokeDasharray: '5 3',
+                strokeWidth: 1,
+                stroke: theme.palette.text.tertiary,
+                '&:first-of-type': {
+                  strokeDasharray: 'none',
+                  stroke: theme.palette.common.white,
+                },
+              },
+            }}
+            slots={{
+              popper: CustomTooltip,
+            }}
+          />
+        </Box>
       </Box>
     </Stack>
   )

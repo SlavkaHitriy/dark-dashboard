@@ -20,7 +20,7 @@ export const Login = () => {
 
   return (
     <FormikProvider value={formik}>
-      <Stack width='100%' height='100%' alignItems='center' justifyContent='center'>
+      <Stack width='100%' height='100%' alignItems='center' justifyContent='center' px={2}>
         <Stack maxWidth={420} width='100%' gap={3} p={3} bgcolor='background.secondary' borderRadius='8px'>
           <Box
             sx={{

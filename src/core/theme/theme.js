@@ -58,6 +58,16 @@ export const theme = createTheme({
       lineHeight: '20px',
     },
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      customXs: 480,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
   components: {
     MuiButton: {
       styleOverrides: {

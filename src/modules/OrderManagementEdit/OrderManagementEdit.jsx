@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Stack, Typography } from '@mui/material'
+import { Box, Button, Grid2, Stack, Typography } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FormikProvider, useFormik } from 'formik'
@@ -14,6 +14,7 @@ import { CloseIcon } from '@/assets/icons/CloseIcon.jsx'
 import { TackIcon } from '@/assets/icons/TackIcon.jsx'
 import { DefaultSelect } from '@/ui/DefaultSelect/index.js'
 import { DefaultInput } from '@/ui/DefaultInput/index.js'
+import { theme } from '@/core/theme/theme.js'
 
 export const OrderManagementEdit = () => {
   const formik = useFormik({
@@ -38,7 +39,7 @@ export const OrderManagementEdit = () => {
   return (
     <FormikProvider value={formik}>
       <Stack width='100%' px={3} py={2}>
-        <Stack direction='row' alignItems='center' justifyContent='space-between' gap={4} mb={2}>
+        <Stack direction='row' alignItems='center' justifyContent='space-between' gap={4} mb={2} flexWrap='wrap'>
           <Link to='/dashboard'>
             <Stack
               direction='row'
@@ -71,7 +72,7 @@ export const OrderManagementEdit = () => {
               </Typography>
             </Stack>
           </Link>
-          <Stack direction='row' gap={5} alignItems='center'>
+          <Stack direction='row' gap={{ sm: 5, xs: 2 }} alignItems='center' flexWrap='wrap'>
             <Stack direction='row' gap={3} alignItems='center'>
               <Stack direction='row' gap={1} alignItems='center'>
                 <DefaultIconButton icon={<AccidentsIcon />} />
@@ -86,7 +87,7 @@ export const OrderManagementEdit = () => {
             </Stack>
           </Stack>
         </Stack>
-        <Stack direction='row' alignItems='center' justifyContent='space-between' mb={3}>
+        <Stack direction='row' alignItems='center' justifyContent='space-between' gap={2} mb={3} flexWrap='wrap'>
           <Stack direction='row' gap={1} alignItems='center'>
             <Typography variant='h3'>Order ID 201923985981</Typography>
             <Stack direction='row' gap={1} alignItems='center' py={0.5} px={1} borderRadius='32px' bgcolor='background.secondary'>
@@ -111,7 +112,20 @@ export const OrderManagementEdit = () => {
             <Button variant='outlined'>Generate Report</Button>
           </Stack>
         </Stack>
-        <Stack direction='row' alignItems='center' justifyContent='space-between' gap='120px' mb={8}>
+        <Stack
+          direction='row'
+          alignItems='center'
+          justifyContent='space-between'
+          gap='120px'
+          mb={8}
+          sx={{
+            [theme.breakpoints.down(1200)]: {
+              flexDirection: 'column',
+              gap: 6,
+              alignItems: 'flex-start',
+            },
+          }}
+        >
           <Box
             sx={{
               maxWidth: '470px',
@@ -138,7 +152,7 @@ export const OrderManagementEdit = () => {
                 </Typography>
               </Stack>
             </Stack>
-            <Stack direction='row' px={2} py={3} alignItems='center' gap={3}>
+            <Stack direction='row' px={2} py={3} alignItems='center' gap={3} flexWrap='wrap'>
               <Stack direction='row' alignItems='center' gap={1}>
                 <Typography variant='h3'>231</Typography>
                 <Typography
@@ -175,26 +189,26 @@ export const OrderManagementEdit = () => {
             </Stack>
           </Box>
           <Box maxWidth={900} width='100%'>
-            <Grid container spacing={3}>
-              <Grid item xs={3}>
+            <Grid2 container spacing={3}>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>Creation Date</Typography>
                   <Typography color='text.tertiary'>23/12/2019</Typography>
                 </Stack>
-              </Grid>
-              <Grid item xs={3}>
+              </Grid2>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>Account Status</Typography>
                   <Typography color='text.tertiary'>Normal</Typography>
                 </Stack>
-              </Grid>
-              <Grid item xs={3}>
+              </Grid2>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>End Date</Typography>
                   <Typography color='text.tertiary'>23/12/2021</Typography>
                 </Stack>
-              </Grid>
-              <Grid item xs={3}>
+              </Grid2>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>Follow up after</Typography>
                   <Typography color='text.tertiary'>
@@ -208,88 +222,88 @@ export const OrderManagementEdit = () => {
                     />
                   </Typography>
                 </Stack>
-              </Grid>
-              <Grid item xs={3}>
+              </Grid2>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>Contract Name</Typography>
                   <Typography color='text.tertiary'>
                     <DefaultLink to='/dashboard'>SUPERTEL-WE-201902737</DefaultLink>
                   </Typography>
                 </Stack>
-              </Grid>
-              <Grid item xs={3}>
+              </Grid2>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>Identification</Typography>
                   <Typography color='text.tertiary'>ITH0283057101</Typography>
                 </Stack>
-              </Grid>
-              <Grid item xs={3}>
+              </Grid2>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>Group</Typography>
                   <Typography color='text.tertiary'>SMS2019-58178</Typography>
                 </Stack>
-              </Grid>
-              <Grid item xs={3}>
+              </Grid2>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>Connections</Typography>
                   <Typography color='text.tertiary'>Established</Typography>
                 </Stack>
-              </Grid>
-              <Grid item xs={3}>
+              </Grid2>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>Billing Address</Typography>
                   <Typography color='text.tertiary'>SE, Stockholm</Typography>
                 </Stack>
-              </Grid>
-              <Grid item xs={3}>
+              </Grid2>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>Allowance Sharing</Typography>
                   <Typography color='text.tertiary'>Normal</Typography>
                 </Stack>
-              </Grid>
-              <Grid item xs={3}>
+              </Grid2>
+              <Grid2 size={{ sm: 3, customXs: 4, xs: 6 }}>
                 <Stack gap={0.5}>
                   <Typography>Fault Priority</Typography>
                   <Typography color='text.tertiary'>0 (no priority)</Typography>
                 </Stack>
-              </Grid>
-            </Grid>
+              </Grid2>
+            </Grid2>
           </Box>
         </Stack>
         <Stack p={3} gap={3} borderRadius='8px' border='1px solid' borderColor='background.tertiary'>
           <Box>
-            <Grid container columnSpacing={1.5} rowSpacing={3}>
-              <Grid item xs={4}>
+            <Grid2 container columnSpacing={1.5} rowSpacing={3}>
+              <Grid2 size={{ xs: 12, customXs: 6, sm: 4 }}>
                 <DefaultInput label='Field Title 1' name='field1' />
-              </Grid>
-              <Grid item xs={4}>
+              </Grid2>
+              <Grid2 size={{ xs: 12, customXs: 6, sm: 4 }}>
                 <DefaultInput label='Field Title 2' name='field2' />
-              </Grid>
-              <Grid item xs={4}>
+              </Grid2>
+              <Grid2 size={{ xs: 12, customXs: 6, sm: 4 }}>
                 <DefaultInput label='Field Title 3' name='field3' />
-              </Grid>
-              <Grid item xs={4}>
+              </Grid2>
+              <Grid2 size={{ xs: 12, customXs: 6, sm: 4 }}>
                 <DefaultInput label='Field Title 4' name='field4' />
-              </Grid>
-              <Grid item xs={4}>
+              </Grid2>
+              <Grid2 size={{ xs: 12, customXs: 6, sm: 4 }}>
                 <DefaultInput label='Field Title 5' name='field5' />
-              </Grid>
-              <Grid item xs={4}>
+              </Grid2>
+              <Grid2 size={{ xs: 12, customXs: 6, sm: 4 }}>
                 <DefaultInput label='Field Title 6' name='field6' />
-              </Grid>
-              <Grid item xs={4}>
+              </Grid2>
+              <Grid2 size={{ xs: 12, customXs: 6, sm: 4 }}>
                 <DefaultInput label='Field Title 7' name='field7' />
-              </Grid>
-              <Grid item xs={4}>
+              </Grid2>
+              <Grid2 size={{ xs: 12, customXs: 6, sm: 4 }}>
                 <DefaultInput label='Field Title 8' name='field8' />
-              </Grid>
-              <Grid item xs={4}>
+              </Grid2>
+              <Grid2 size={{ xs: 12, customXs: 6, sm: 4 }}>
                 <DefaultInput label='Field Title 9' name='field9' />
-              </Grid>
-              <Grid item xs={4}>
+              </Grid2>
+              <Grid2 size={{ xs: 12, customXs: 6, sm: 4 }}>
                 <DefaultInput label='Field Title 10' name='field10' />
-              </Grid>
-            </Grid>
+              </Grid2>
+            </Grid2>
           </Box>
           <Box height='1px' bgcolor='background.tertiary' />
           <Stack direction='row' gap={1.5} justifyContent='flex-end'>

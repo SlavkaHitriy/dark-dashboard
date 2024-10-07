@@ -1,19 +1,28 @@
 import { Stack } from '@mui/material'
-import React from 'react'
+import React, { useRef } from 'react'
 import { useRecoilState } from 'recoil'
 import { SidebarItem } from '@/components/Sidebar/SidebarItem.jsx'
 import { mainMenu, systemMenu } from './data/menu.jsx'
-import { sidebarOpened } from '@/core/store/index.js'
+import { sidebarOpened, sidebarVisible } from '@/core/store/index.js'
+import { theme } from '@/core/theme/theme.js'
+import { useClickOutside } from '@/hooks/useClickOutside.js'
 
 export const Sidebar = () => {
   const [isOpened, setIsOpened] = useRecoilState(sidebarOpened)
+  const [isVisible, setIsVisible] = useRecoilState(sidebarVisible)
+  const sidebarRef = useRef(null)
 
   const toggleSidebar = () => {
     setIsOpened(prev => !prev)
   }
 
+  useClickOutside(sidebarRef, () => {
+    setIsVisible(false)
+  })
+
   return (
     <Stack
+      ref={sidebarRef}
       component='aside'
       width={isOpened ? 256 : 100}
       flexShrink={0}
@@ -22,6 +31,13 @@ export const Sidebar = () => {
       zIndex={11}
       sx={{
         transition: 'all 0.3s ease',
+        [theme.breakpoints.down(768)]: {
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          bottom: 0,
+          display: isVisible ? 'flex' : 'none',
+        },
       }}
     >
       <Stack
