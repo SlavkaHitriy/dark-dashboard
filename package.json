@@ -4,24 +4,18 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@amcharts/amcharts5": "^5.9.8",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^6.1.2",
     "@mui/material": "^6.1.2",
     "@mui/x-charts": "^7.19.0",
     "@mui/x-data-grid": "^7.19.0",
-    "@mui/x-date-pickers": "^7.19.0",
-    "chart.js": "^4.4.3",
-    "dayjs": "^1.11.11",
     "formik": "^2.4.6",
     "react": "^18.3.1",
-    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",
     "react-router": "^6.23.1",
     "react-router-dom": "^6.23.1",
-    "recoil": "^0.7.7",
-    "use-debounce": "^10.0.0"
+    "recoil": "^0.7.7"
   },
   "scripts": {
     "dev": "vite",
